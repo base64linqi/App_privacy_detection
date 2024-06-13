@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.linqi.controller.DataListController">
+   <children>
+      <TableView fx:id="tblList" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <columns>
+            <TableColumn prefWidth="${tblList.width * 0.1}" style="-fx-alignment: CENTER;" text="序号">
+               <cellValueFactory>
+                  <PropertyValueFactory property="index" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="${tblList.width * 0.15}" style="-fx-alignment: CENTER;" text="测试方案名称">
+               <cellValueFactory>
+                  <PropertyValueFactory property="projectName" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="${tblList.width * 0.15}" style="-fx-alignment: CENTER;" text="测试类型">
+               <cellValueFactory>
+                  <PropertyValueFactory property="type" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="${tblList.width * 0.2}" style="-fx-alignment: CENTER;" text="开始时间">
+               <cellValueFactory>
+                  <PropertyValueFactory property="startTime" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tcDelete" prefWidth="${tblList.width * 0.18}" style="-fx-alignment: CENTER;" text="操作">
+            </TableColumn>
+            <TableColumn fx:id="tcOpen" prefWidth="${tblList.width * 0.18}" style="-fx-alignment: CENTER;" text="打开">
+            </TableColumn>
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

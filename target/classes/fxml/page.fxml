@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:id="root" prefHeight="200.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.linqi.controller.ProjectController">
+   <children>
+      <Label layoutX="29.0" layoutY="58.0" prefHeight="15.0" prefWidth="78.0" text="页面名称" AnchorPane.leftAnchor="29.0" />
+      <TextField fx:id="tbxName" layoutX="121.0" layoutY="54.0" prefHeight="23.0" prefWidth="235.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="34.0" />
+      <Button fx:id="btnConfirm" layoutX="197.0" layoutY="115.0" mnemonicParsing="false" onAction="#onConfirm" prefHeight="23.0" prefWidth="63.0" text="确定" />
+      <Button fx:id="btnCancel" layoutX="290.0" layoutY="115.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="23.0" prefWidth="63.0" text="取消" />
+   </children>
+</AnchorPane>

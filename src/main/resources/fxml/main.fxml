@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.linqi.controller.MainController">
+
+    <children>
+
+        <MenuBar fx:id="menuBar" layoutY="2.0" prefHeight="25.0" prefWidth="252.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <menus>
+                <Menu text="颜色主题">
+                    <items>
+                        <MenuItem onAction="#setPinkTheme" text="Pink" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+
+        <AnchorPane fx:id="paneButtons" layoutX="14.0" layoutY="32.0" prefHeight="45.0" prefWidth="780.0" style="-fx-border-color: #cccccc" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+
+            <children>
+                <ComboBox fx:id="cbxAppList" layoutX="91.0" layoutY="11.0" prefHeight="25.0" prefWidth="161.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="10.0" />
+                <Button fx:id="btnGetAppList" layoutX="490.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnGetAppListAction" text="获取" />
+                <TextField fx:id="tbxAppFilter" layoutX="256.0" layoutY="10.0" />
+                <Button fx:id="btnStartSpawingAction" layoutX="610.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnStartSpawingAction" text="Spawing" />
+                <Button fx:id="btnStartAttach" layoutX="544.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnStartAttachAction" text="Attach" />
+                <Label layoutX="31.0" layoutY="15.0" text="应用列表" />
+            <Button fx:id="btnFilterAppList" layoutX="436.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnFilterAppListClicked" text="过滤" />
+            <RadioButton layoutX="699.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="android">
+               <toggleGroup>
+                  <ToggleGroup fx:id="machineGroup0" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton disable="true" layoutX="777.0" layoutY="15.0" mnemonicParsing="false" text="IOS" toggleGroup="$machineGroup0" />
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="paneXposedButton" disable="true" layoutX="14.0" layoutY="32.0" prefHeight="45.0" prefWidth="780.0" style="-fx-border-color: #cccccc" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+            <children>
+                <TextField fx:id="tbxAppName" layoutX="126.0" layoutY="10.0" />
+                <Button fx:id="btnStartXposed" layoutX="306.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnStartXposedClick" text="开始" />
+            <Label layoutX="55.0" layoutY="14.0" text="请输入包名" />
+            </children>
+        </AnchorPane>
+        <FlowPane fx:id="paneCalls" layoutX="10.0" layoutY="124.0" prefHeight="134.0" prefWidth="767.0" style="-fx-border-color: #cccccc;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="125.0" />
+        <AnchorPane layoutX="17.0" layoutY="78.0" prefHeight="47.0" prefWidth="767.0" style="-fx-border-color: #cccccc;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="79.0">
+            <children>
+                <Label layoutX="219.0" layoutY="16.0" text="应用名称：" AnchorPane.leftAnchor="219.0" AnchorPane.topAnchor="16.0" />
+                <Label fx:id="lblAppName" layoutX="286.0" layoutY="15.0" text="AppName" />
+                <Button fx:id="btnExitFridaProcess" layoutX="398.0" layoutY="11.0" mnemonicParsing="false" onAction="#onExitFirdaProcessAction" text="中止检测" />
+            <Button fx:id="btnInstallApp" layoutX="475.0" layoutY="11.0" mnemonicParsing="false" onAction="#onBtnInstallAppClicked" text="安装应用" />
+            <HBox fx:id="boxPages" layoutX="652.0" layoutY="4.0" prefHeight="37.0" prefWidth="272.0" spacing="5.0" style="-fx-border-color: #BBBBBB;" AnchorPane.leftAnchor="651.0" AnchorPane.rightAnchor="15.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></HBox>
+            <Button fx:id="btnAddPage" layoutX="566.0" layoutY="12.0" mnemonicParsing="false" onAction="#onAddPageClick" text="+" />
+            <Button fx:id="btnRename" layoutX="599.0" layoutY="12.0" mnemonicParsing="false" onAction="#onRename" prefHeight="23.0" prefWidth="42.0" text="改名" />
+            <Label fx:id="lblProject" layoutX="21.0" layoutY="15.0" text="测试方案" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="15.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="10.0" layoutY="259.0" prefHeight="334.0" prefWidth="780.0" style="-fx-border-color: #cccccc;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="258.0">
+            <children>
+                <Label fx:id="lblCallTimes" layoutX="26.0" layoutY="14.0" text="调用次数" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="14.0" />
+                <GridPane prefHeight="191.0" prefWidth="923.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TableView fx:id="tblList" onMouseClicked="#onTblListClicked" prefHeight="287.0" prefWidth="469.0">
+                            <columns>
+                                <TableColumn prefWidth="${tblList.width * 0.1}" style="-fx-alignment: CENTER;" text="序号">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="orderIndex" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="${tblList.width * 0.3}" style="-fx-alignment: CENTER;" text="方法">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="method" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="${tblList.width * 0.3}" style="-fx-alignment: CENTER;" text="描述">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="callPermissionDesc" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="${tblList.width * 0.1}" style="-fx-alignment: CENTER;" text="调用次数">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="callCount" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="${tblList.width * 0.18}" style="-fx-alignment: CENTER;" text="更新时间">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="callTime" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                     <contextMenu>
+                        <ContextMenu fx:id="ctxMenuTable">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#onDeleteDetectInfo" text="删除" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                        </TableView>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                            <children>
+                                <TableView fx:id="tblDetail" layoutX="9.0" prefHeight="102.0" prefWidth="449.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn prefWidth="${tblList.width * 0.1}" style="-fx-alignment: CENTER;" text="序号">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="orderIndex" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="${tblList.width * 0.3}" style="-fx-alignment: CENTER;" text="类名">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="callClass" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="${tblList.width * 0.3}" style="-fx-alignment: CENTER;" text="方法名">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="method" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="${tblList.width * 0.1}" style="-fx-alignment: CENTER;" text="描述">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="description" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="${tblList.width * 0.18}" style="-fx-alignment: CENTER;" text="更新时间">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="callTime" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+                                <TextArea fx:id="txaStackInfo" layoutX="28.0" layoutY="110.0" prefHeight="262.0" prefWidth="449.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </GridPane>
+            <Button fx:id="btnClearProject" layoutX="114.0" layoutY="11.0" mnemonicParsing="false" onAction="#onBtnClearProjectAction" text="清空解决方案" />
+            <TextField fx:id="tbxSearch" layoutX="728.0" layoutY="10.0" prefHeight="25.0" prefWidth="151.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="btnClearSearch" layoutX="854.0" layoutY="11.0" mnemonicParsing="false" onAction="#onBtnClearSearch" prefHeight="16.0" prefWidth="12.0" text="X" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="11.0">
+            </Button>
+            <Button layoutX="887.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnDoSearch" text="搜索" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="10.0" />
+            <ComboBox fx:id="cbxSearchCategory" layoutX="613.0" layoutY="11.0" prefHeight="23.0" prefWidth="104.0" AnchorPane.rightAnchor="221.0" AnchorPane.topAnchor="11.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
