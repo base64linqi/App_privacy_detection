@@ -1,3 +1,5 @@
+/*请按照下面示例，可以自行添加*/
+
 function getNowDate() {
     var myDate = new Date;
     var year = myDate.getFullYear();
