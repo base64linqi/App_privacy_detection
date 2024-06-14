@@ -60,6 +60,8 @@ Windows 10（测试没问题）
 
 #### Android-Xposed
 
+Xposed检测代码[传送门](https://github.com/base64linqi/COPXposed)
+
 ![image-20230314095308372](https://images-j3.oss-cn-guangzhou.aliyuncs.com/img/image-20230314095308372.png)
 
 创建完成之后，`包名`随意只是数据库中有这个表，测试不填也行~然后点击开始即可捕获，但是如果想切换到其他状态，需要`中止检测`后点击其他状态页面，否则多线程写入会导致数据库锁死从而不记录信息。
