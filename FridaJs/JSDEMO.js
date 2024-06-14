@@ -1,4 +1,4 @@
-/*请按照下面示例，可以自行添加*/
+/*请按照下面示例，可以自行添加，编译出Jar包后，将JSDEMO.js放在jar包根目录即可在【选择JS文件】中看到*/
 
 function getNowDate() {
     var myDate = new Date;
